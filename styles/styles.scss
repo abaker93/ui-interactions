@@ -1,0 +1,202 @@
+/*
+FONT WEIGHTS:
+Thin:       100
+Extra-Light:200
+Light:      300
+Regular:    400
+Medium:     500
+Semi-Bold:  600
+Bold:       700
+Extra-Bold: 800
+Black:      900
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    width: max-content;
+    background: #FFFFFF;
+    border: none;
+}
+
+#logo {
+    width: max-content;
+    padding: 20px 0 20px 50px;
+
+    h1 {
+        font-family: 'Meddon', cursive;
+        font-size: 35px;
+        color: #053625;
+    }
+
+    span {
+        font-weight: 300;
+        font-size: 12px;
+        letter-spacing: 0.45em;
+        color: #DD9D02;
+    }
+
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+        transition: background-color ease-in-out 0.4s;
+
+        &:hover {
+            background-color: #E0DFE4;
+        }
+
+    }
+
+    #main-nav {
+        display: grid;
+        grid-template-columns: repeat(8, auto);
+        grid-column-gap: 50px;
+        align-content: center;
+        padding: 20px 50px 20px 0;
+    
+        li {
+            cursor: pointer;
+            transition: color ease-in-out 0.2s,
+                        fill ease-in-out 0.2s;
+
+            & > * { vertical-align: middle; }
+
+            &:hover {
+                color: #3E9057;
+                fill: #3E9057;
+            }
+
+            svg { height: 20px; }
+
+        }
+
+    }
+
+    .mega-menu {
+        display: none;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 50px;
+        position: absolute;
+        width: 100%;
+        top: 88px;
+        left: 0;
+        background-color: #053625;
+        padding: 50px;
+        color: #E0DFE4;
+
+        span.subtitle {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        li {
+            padding-bottom: 10px;
+
+            &:nth-child(2) { margin-top: 15px; }
+
+            &.promotion {
+                background-image: url('../img/promotion.jpg');
+                background-size: cover;
+                background-position: center;
+                padding: 20px;
+                margin-top: 15px;
+                height: 250px;
+                position: relative;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                text-align: center;
+
+                &:before {
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(0,0,0,0.3);
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                }
+
+                span {
+                    display: block;
+                    color: #FFFFFF;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .promotion-title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 30px;
+                }
+
+                .promotion-desc {
+                    margin-bottom: 30px;
+                    font-weight: 500;
+                }
+
+                .promotion-btn {
+                    position: relative;
+                    z-index: 1;
+                    border: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 88px;
+        background-color: #053625;
+        color: #E0DFE4;
+        padding: 30px;
+        display: none;
+
+        li {
+            padding-bottom: 10px;
+        }
+
+    }
+
+}
+
+#slider {
+    height: 100vh;
+
+    .slide {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #slide1 { background-image: url('./img/slider1.jpg'); }
+    #slide2 { background-image: url('./img/slider2.jpg'); }
+    #slide3 { background-image: url('./img/slider3.jpg'); }
+
+} 
