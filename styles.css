@@ -47,9 +47,30 @@ button {
   color: #DD9D02;
 }
 
-nav {
+.alert {
+  background-color: #111111;
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  padding: 6px 20px 4px;
   position: fixed;
   top: 0;
+  width: 100%;
+}
+.alert span {
+  grid-column: 2/3;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.alert svg {
+  height: 20px;
+  fill: #FFFFFF;
+}
+
+nav {
+  position: fixed;
+  top: 29px;
   width: 100%;
 }
 nav .container {
@@ -57,10 +78,12 @@ nav .container {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 0.25px solid #E0DFE4;
   transition: background-color ease-in-out 0.4s;
 }
 nav .container:hover {
-  background-color: #E0DFE4;
+  background-color: #FFF;
 }
 nav #main-nav {
   display: grid;
@@ -161,12 +184,24 @@ nav .dropdown li {
 
 #slider {
   height: 100vh;
+  position: relative;
+  z-index: -100;
 }
 #slider .slide {
   height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+#slider .slide:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  mix-blend-mode: screen;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 #slider #slide1 {
   background-image: url("./img/slider1.jpg");
@@ -176,6 +211,21 @@ nav .dropdown li {
 }
 #slider #slide3 {
   background-image: url("./img/slider3.jpg");
+}
+#slider .controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+#slider .controls svg {
+  height: 20px;
+  stroke: white;
+  stroke-width: 10;
+  fill: transparent;
+  margin-right: 7px;
+}
+#slider .controls svg.active {
+  fill: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -51,9 +51,32 @@ button {
 
 }
 
-nav {
+.alert {
+    background-color: #111111;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    padding: 6px 20px 4px;
     position: fixed;
     top: 0;
+    width: 100%;
+
+    span {
+        grid-column: 2 / 3;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    svg {
+        height: 20px;
+        fill: #FFFFFF;
+    }
+}
+
+nav {
+    position: fixed;
+    top: 29px;
     width: 100%;
 
     .container {
@@ -61,10 +84,12 @@ nav {
         display: grid;
         grid-template-columns: repeat(2, auto);
         justify-content: space-between;
+        background-color: rgba(255,255,255,0.2);
+        border-bottom: 0.25px solid #E0DFE4;
         transition: background-color ease-in-out 0.4s;
 
         &:hover {
-            background-color: #E0DFE4;
+            background-color: #FFF;
         }
 
     }
@@ -187,16 +212,48 @@ nav {
 
 #slider {
     height: 100vh;
+    position: relative;
+    z-index: -100;
 
     .slide {
         height: 100%;
         width: 100%;
         background-size: cover;
         background-position: center;
+
+        &:before {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            mix-blend-mode: screen;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+
     }
 
     #slide1 { background-image: url('./img/slider1.jpg'); }
     #slide2 { background-image: url('./img/slider2.jpg'); }
     #slide3 { background-image: url('./img/slider3.jpg'); }
+
+    .controls {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        svg {
+            height: 20px;
+            stroke: white;
+            stroke-width: 10;
+            fill: transparent;
+            margin-right: 7px;
+
+            &.active { fill: white; }
+
+        }
+
+    }
 
 } 
