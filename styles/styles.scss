@@ -255,6 +255,11 @@ nav {
         width: 100%;
         background-size: cover;
         background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: visibility 1s,
+                    opacity ease-in-out 1s;
 
         &:before {
             content: '';
@@ -284,6 +289,7 @@ nav {
             stroke-width: 10;
             fill: transparent;
             margin-right: 7px;
+            transition: fill ease-in-out 0.1s;
 
             &.active { fill: white; }
 
