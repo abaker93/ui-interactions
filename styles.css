@@ -283,7 +283,7 @@ nav .dropdown.show {
     transition: left ease-in-out 0.8s;
   }
   nav #main-nav.show {
-    left: 0;
+    left: 0 !important;
   }
   nav #main-nav li {
     padding: 15px 0;
@@ -340,6 +340,15 @@ nav .dropdown.show {
   }
   nav #main-nav .dropdown.show * {
     height: initial;
+  }
+}
+@media screen and (max-width: 500px) {
+  .alert span span {
+    display: none;
+  }
+
+  #main-nav {
+    padding-right: 50px !important;
   }
 }
 

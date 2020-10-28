@@ -321,7 +321,7 @@ nav {
             transition: left ease-in-out 0.8s;
 
             &.show {
-                left: 0;
+                left: 0 !important;
             }
 
             li {
@@ -388,5 +388,13 @@ nav {
         }
 
     }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .alert span span { display: none; }
+ 
+    #main-nav { padding-right: 50px !important; }
 
 }
